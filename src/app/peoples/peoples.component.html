@@ -1,20 +1,31 @@
-<h2>{{people.name | uppercase}} Details</h2>
-<div><span>id: </span>{{people.id}}</div>
-<div>
-  <label>name:
-    <input [(ngModel)]="people.name" placeholder="name">
-  </label>
-</div>
-<div>
-  <label>email:
-    <input [(ngModel)]="people.email" placeholder="email">
-  </label>
-</div><div>
-  <label>phone:
-    <input [(ngModel)]="people.phone" placeholder="phone">
-  </label>
-</div><div>
-  <label>address:
-    <input [(ngModel)]="people.address" placeholder="address">
-  </label>
+<h2>List of Records</h2>
+<ul class="peoples">
+  <li *ngFor="let people of peoples" [class.selected]="people === selectedPeople" (click)="onSelect(people)">
+    <span class="badge">{{people.id}}</span> {{people.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedPeople">
+  <h2>{{selectedPeople.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedPeople.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedPeople.name" placeholder="name">
+    </label>
+  </div>
+  <div>
+    <label>email:
+      <input [(ngModel)]="selectedPeople.email" placeholder="email">
+    </label>
+  </div>
+  <div>
+    <label>phone:
+      <input [(ngModel)]="selectedPeople.phone" placeholder="phone">
+    </label>
+  </div>
+  <div>
+    <label>address:
+      <input [(ngModel)]="selectedPeople.address" placeholder="address">
+    </label>
+  </div>
 </div>
