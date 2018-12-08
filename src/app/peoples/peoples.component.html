@@ -1,3 +1,20 @@
-<p>
-  peoples works!
-</p>
+<h2>{{people.name | uppercase}} Details</h2>
+<div><span>id: </span>{{people.id}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="people.name" placeholder="name">
+  </label>
+</div>
+<div>
+  <label>email:
+    <input [(ngModel)]="people.email" placeholder="email">
+  </label>
+</div><div>
+  <label>phone:
+    <input [(ngModel)]="people.phone" placeholder="phone">
+  </label>
+</div><div>
+  <label>address:
+    <input [(ngModel)]="people.address" placeholder="address">
+  </label>
+</div>
